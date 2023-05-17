@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label text="Label created by ui builder" display-tooltip-when-elided="true" />
+    <ui:TextField picking-mode="Ignore" label="Generic Make" value="Text" text="filler text" binding-path="m_make" />
+    <ui:Foldout text="Default Inspector" name="Default_Inspector" />
+    <uie:PropertyField binding-path="m_year" label="currentYear" name="year" style="height: 20px;" />
+    <uie:PropertyField name="color" label="Current Color" binding-path="m_currentColor" style="height: 14px;" />
+    <uie:PropertyField binding-path="m_testingSub" label="sub class list" name="subclasslist" usage-hints="None" focusable="false" style="height: 142px; width: 351px; opacity: 1; position: relative; top: 5px; left: auto;" />
+</ui:UXML>

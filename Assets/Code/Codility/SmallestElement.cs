@@ -37,20 +37,20 @@ public class SmallestElement : MonoBehaviour
 
     public int solutionTwo(int[] A)
     {
-        if (A.Length>0 || !A.Any(x => x == 1)) { return 1; }// 1) A lenght is larger than 0 2) A does not contain 1, Then We will return 1 
+        if (A.Length==0 || !A.Any(x => x == 1)) { return 1; }// 1) empty array 2) A does not contain 1, Then We will return 1 
         // check positives 
         var positiveList = A.Where(n => n > 0);// getting only the positives into a list  
         int resultAmount = positiveList.Count(); // the positive count 
         var positiveCount = Enumerable.Range(1, resultAmount);// creating a temp list of all the positive numbers 
         var failNumber = positiveCount.Except(positiveList);// fail numbers are numbers we do not have 
         // return results 
-        if (!failNumber.Any()) { return A.Max() + 1; }
+        if (!failNumber.Any()) { return A.Max() + 1; }// if we don't have anything in the fail number meaning it didn't match 
         return failNumber.FirstOrDefault();// finding the smallest 
     }
 
     public int solutionTwoNoComments(int[] A)
     {
-        if (A.Length > 0 || !A.Any(x => x == 1)) { return 1; }
+        if (A.Length == 0 || !A.Any(x => x == 1)) { return 1; }
 
         var positiveList = A.Where(n => n > 0);
         int resultAmount = positiveList.Count();

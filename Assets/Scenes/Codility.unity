@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2101423938}
   - component: {fileID: 2101423939}
+  - component: {fileID: 2101423940}
   m_Layer: 0
   m_Name: PrefixSums
   m_TagString: Untagged
@@ -167,4 +168,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63a8c4b0783359a4d808963260146504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pubArray: 
+  pubArray: 00000000020000000300000006000000
+  resultArray: 0000000002000000050000000b000000
+  num1: 0
+  num2: 1
+--- !u!114 &2101423940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101423937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22beace1fc3514e40b5e96850d699b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

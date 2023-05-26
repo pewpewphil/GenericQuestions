@@ -1,20 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class MinTwoSlice : MonoBehaviour
+public class MinTwoSlice 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public int SliceTwo(int[] v)
     {// FROM https://molchevskyi.medium.com/best-solutions-for-codility-lessons-lesson-5-prefix-sums-68b716f9d825

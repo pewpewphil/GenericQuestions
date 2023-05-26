@@ -1,21 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System;
 
-public class FloodDepth : MonoBehaviour
+public class FloodDepth 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public int solution1(int[] A)
     {

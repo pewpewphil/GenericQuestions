@@ -15,7 +15,7 @@ public class LongestPassword
 
             if (substrings[i].Count(char.IsLetter) % 2 == 0 && substrings[i].Count(char.IsDigit) % 2 == 1 && substrings[i].All(char.IsLetterOrDigit))
             {// Long check for the letters 
-                maxCount = Math.Max(maxCount,[i].Length);// make sure 
+                maxCount = Math.Max(maxCount,substrings[i].Length);// make sure 
             }
         }
         return maxCount;

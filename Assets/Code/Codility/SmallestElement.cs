@@ -3,19 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class SmallestElement : MonoBehaviour
+public class SmallestElement 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public int solutionOne(int[] A)
     {
         Dictionary<int, int> items = new Dictionary<int, int>();

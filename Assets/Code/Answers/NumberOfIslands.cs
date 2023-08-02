@@ -8,9 +8,9 @@ public class NumberOfIslands : MonoBehaviour
     [SerializeField]
     public int[,] inputMap = new int[5, 5] { 
         { 1,1,1,1,0},
+        { 1,1,0,1,1},
         { 1,1,0,1,0},
-        { 1,1,1,0,0},
-        { 1,1,1,0,0},
+        { 1,0,1,0,0},
         { 1,0,0,1,1}};
 
     public struct rowColLoc
@@ -124,7 +124,8 @@ public class NumberOfIslands : MonoBehaviour
             {
                 if (!alreadyVisitedArray.Contains(c + r * col) && inputMap[r, c] == 1)
                 {
-                    Debug.Log(" new island startV2 "+(c + r * col));
+                    Debug.Log(" new island startV2 "+(c + r * col)+"|"+ c+"|"+r);
+
                     BreathFirstSearch(c, r, col, row);
                     islandCounter++;
                 }
@@ -153,15 +154,14 @@ public class NumberOfIslands : MonoBehaviour
             Debug.Log(currentData.col + "=col||row=" + currentData.row);
             foreach (rowColLoc dir in direction)
             {
-                if ((row > currentData.row + dir.row)
-                    && (col > currentData.col + dir.col)// going right
-                    && (0 < currentData.col + dir.col)// going left 
-                    && (inputMap[currentData.col + dir.col, currentData.row + dir.row] == 1)
+                if ((row > (currentData.row + dir.row))
+                    && (col > (currentData.col + dir.col))// going right
+                    && (-1 < (currentData.col + dir.col))// going left 
+                    && (inputMap[ currentData.row + dir.row, currentData.col + dir.col] == 1)
                     && !alreadyVisitedArray.Contains((currentData.col + dir.col) + (currentData.row + dir.row) * col))
                 {
                     // if passes everything 
                     CollectionsQueue.Enqueue(new rowColLoc(currentData.col + dir.col, currentData.row + dir.row));
-                    Debug.Log((currentData.col + dir.col) + "=col|ADD|row=" + (currentData.row + dir.row));
                     alreadyVisitedArray.Add((currentData.col + dir.col) + ((currentData.row + dir.row) * col));
                 }
 

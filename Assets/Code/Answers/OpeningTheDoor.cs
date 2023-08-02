@@ -9,6 +9,18 @@ public class OpeningTheDoor : MonoBehaviour
     Vector2 DoorNormal;
     List<Vector2> AllObjectLoc; 
 
+
+    public void CallOtherFunction()
+    {
+        ReferrenceFunction();
+    }
+    /// <summary>
+    /// This is the function that will be referrenced by another here 
+    /// </summary>
+    public void ReferrenceFunction()
+    {
+
+    }
     /// <summary>
     /// part A
     /// </summary>

@@ -6,12 +6,13 @@ using System.Linq;
 public class NumberOfIslands : MonoBehaviour
 {
     [SerializeField]
-    public int[,] inputMap = new int[5, 5] { 
-        { 1,1,1,1,0},
-        { 1,1,0,1,1},
-        { 1,1,0,1,0},
-        { 1,0,1,0,0},
-        { 1,0,0,1,1}};
+    public int[,] inputMap = new int[6, 6] { 
+        { 1,1,0,0,0,1},
+        { 1,1,1,1,1,1},
+        { 1,1,0,1,0,0},
+        { 1,0,1,0,0,1},
+        { 1,0,1,0,0,0},
+        { 1,0,0,1,1,0}};
 
     public struct rowColLoc
     {
@@ -95,13 +96,13 @@ public class NumberOfIslands : MonoBehaviour
 
     public void CountIslandsCallV1()
     {
-        Debug.Log("number of islands" + IslandCounterV1(inputMap, 5, 5));
+        Debug.Log("number of islands" + IslandCounterV1(inputMap, 6, 6));
     }
 
 
     public void CountIslandsCallV2()
     {
-        Debug.Log("number of islands" + IslandCounterV2(inputMap, 5, 5));
+        Debug.Log("number of islands" + IslandCounterV2(inputMap, 6, 6));
         //Debug.Log("number of islands" + countIslands(inputMap));
     }
 
@@ -124,7 +125,7 @@ public class NumberOfIslands : MonoBehaviour
             {
                 if (!alreadyVisitedArray.Contains(c + r * col) && inputMap[r, c] == 1)
                 {
-                    Debug.Log(" new island startV2 "+(c + r * col)+"|"+ c+"|"+r);
+                    Debug.Log(" new island startV2 "+(c + r * col));
 
                     BreathFirstSearch(c, r, col, row);
                     islandCounter++;
@@ -139,28 +140,26 @@ public class NumberOfIslands : MonoBehaviour
 
     public void BreathFirstSearch(int startX, int startY, int col, int row)
     {
-        Queue<rowColLoc> CollectionsQueue = new Queue<rowColLoc>();// create a queue
+        Queue<rowColLoc> CollectionsQueue = new Queue<rowColLoc>();//1) create a queue
         alreadyVisitedArray.Add((startX) + startY * col);
         CollectionsQueue.Enqueue(new rowColLoc(startY, startX));
 
-        List<rowColLoc> direction = new List<rowColLoc>();// all directions
+        List<rowColLoc> direction = new List<rowColLoc>();//2) add directions
         direction.Add(new rowColLoc(1, 0));//right
         direction.Add(new rowColLoc(0, 1));//down
         direction.Add(new rowColLoc(-1, 0));//left
 
         while (CollectionsQueue.Count > 0)
         {// while we have something in the queue 
-            rowColLoc currentData = CollectionsQueue.Dequeue();
-            Debug.Log(currentData.col + "=col||row=" + currentData.row);
+            rowColLoc currentData = CollectionsQueue.Dequeue();//3) dequeue the first element 
             foreach (rowColLoc dir in direction)
-            {
-                if ((row > (currentData.row + dir.row))
+            {//4 look through all directions and check coditions 
+                if ((row > (currentData.row + dir.row))// going down
                     && (col > (currentData.col + dir.col))// going right
                     && (-1 < (currentData.col + dir.col))// going left 
-                    && (inputMap[ currentData.row + dir.row, currentData.col + dir.col] == 1)
-                    && !alreadyVisitedArray.Contains((currentData.col + dir.col) + (currentData.row + dir.row) * col))
-                {
-                    // if passes everything 
+                    && (inputMap[ currentData.row + dir.row, currentData.col + dir.col] == 1)//is the next element 1 
+                    && !alreadyVisitedArray.Contains((currentData.col + dir.col) + (currentData.row + dir.row) * col))//do we already have it in the list 
+                {// if passes everything 5) add it
                     CollectionsQueue.Enqueue(new rowColLoc(currentData.col + dir.col, currentData.row + dir.row));
                     alreadyVisitedArray.Add((currentData.col + dir.col) + ((currentData.row + dir.row) * col));
                 }

@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 203749532}
   - component: {fileID: 203749534}
+  - component: {fileID: 203749535}
+  - component: {fileID: 203749536}
   m_Layer: 0
   m_Name: Answers
   m_TagString: Untagged
@@ -162,7 +164,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203749530}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d192816869643dd41b1fafb2a5fde299, type: 3}
   m_Name: 
@@ -174,3 +176,30 @@ MonoBehaviour:
   - obb
   - phil
   - meat
+--- !u!114 &203749535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203749530}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7232221e90f574d86c1ba62899a3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  string1: ham
+  string2: brahm
+--- !u!114 &203749536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203749530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b41533f0a43eb9b4199d42a7e33ee52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usedElements: 

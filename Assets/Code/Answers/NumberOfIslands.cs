@@ -141,7 +141,6 @@ public class NumberOfIslands : MonoBehaviour
     public void BreathFirstSearch(int startX, int startY, int col, int row)
     {
         Queue<rowColLoc> CollectionsQueue = new Queue<rowColLoc>();//1) create a queue
-        alreadyVisitedArray.Add((startX) + startY * col);
         CollectionsQueue.Enqueue(new rowColLoc(startY, startX));
 
         List<rowColLoc> direction = new List<rowColLoc>();//2) add directions
